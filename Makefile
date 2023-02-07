@@ -21,8 +21,6 @@ SRCS_NAME = my_malloc.c
 
 LIBNAME = libmy_malloc.so
 
-MAIN = my_malloc
-
 SRCS = $(patsubst %, $(SRC_PATH)%, $(SRCS_NAME))
 
 OBJS = $(SRCS:.c=.o)
@@ -42,6 +40,3 @@ fclean : clean
 	$(RM) $(LIBNAME)
 
 re : fclean all
-
-main : all
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) src/main.c -L./ -lmy_malloc
